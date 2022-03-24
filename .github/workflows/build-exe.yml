@@ -19,7 +19,7 @@ jobs:
         pip install pyinstaller
     - name: Build with pyinstaller
       run: |
-        pyinstaller main.py
+        pyinstaller -F main.py
     - name: Store exe
       uses: actions/upload-artifact@v3
       with:
