@@ -19,7 +19,7 @@ jobs:
         pip install pyinstaller Pillow PyQt5
     - name: Build with pyinstaller
       run: |
-        pyinstaller -F main.py
+        pyinstaller -F -w main.py
     - name: Store build artifact
       uses: actions/upload-artifact@v3
       with:
