@@ -20,8 +20,8 @@ jobs:
     - name: Build with pyinstaller
       run: |
         pyinstaller -F main.py
-    - name: Store exe
+    - name: Store build artifact
       uses: actions/upload-artifact@v3
       with:
         name: py-image-processing
-        path: D:\a\py-image-processing\py-image-processing\build\main\
+        path: D:\a\py-image-processing\py-image-processing\dist\
