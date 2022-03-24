@@ -7,3 +7,5 @@ Functions:
 * GIF creation from multiple images (of JPG/PNG format)
 
 The GIF creation process resizes all selected images according to the first one, and is defaulted to 300 duration and no looping
+
+An executable file will be available soon
