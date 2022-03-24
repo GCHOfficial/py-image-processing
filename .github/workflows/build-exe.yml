@@ -24,4 +24,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: py-image-processing
-        path: build/py-image-processing.exe
+        path: D:\a\py-image-processing\py-image-processing\build\main\
