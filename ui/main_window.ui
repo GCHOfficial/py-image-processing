@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>273</width>
-    <height>157</height>
+    <width>280</width>
+    <height>180</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -18,14 +18,14 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>273</width>
-    <height>157</height>
+    <width>280</width>
+    <height>180</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>273</width>
-    <height>157</height>
+    <width>280</width>
+    <height>180</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -36,10 +36,15 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>100</y>
-      <width>141</width>
+      <y>140</y>
+      <width>181</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Select Source Folder</string>
@@ -49,10 +54,15 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>30</y>
+      <y>10</y>
       <width>91</width>
       <height>19</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>JPG to PNG</string>
@@ -62,10 +72,15 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>50</y>
+      <y>30</y>
       <width>91</width>
       <height>19</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>PNG to JPG</string>
@@ -75,10 +90,15 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>70</y>
-      <width>191</width>
-      <height>19</height>
+      <y>40</y>
+      <width>201</width>
+      <height>41</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Create GIF from PNGs/JPGs</string>
@@ -87,21 +107,109 @@
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>100</y>
-      <width>101</width>
+      <x>200</x>
+      <y>140</y>
+      <width>61</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
     </property>
     <property name="text">
      <string>Convert</string>
     </property>
    </widget>
-  </widget>
-  <widget class="QStatusBar" name="statusbar">
-   <property name="statusTip">
-    <string notr="true"/>
-   </property>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>82</y>
+      <width>251</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>GIF Settings</string>
+    </property>
+    <widget class="QCheckBox" name="checkBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Loop</string>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="spinBox">
+     <property name="geometry">
+      <rect>
+       <x>195</x>
+       <y>24</y>
+       <width>48</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="readOnly">
+      <bool>false</bool>
+     </property>
+     <property name="buttonSymbols">
+      <enum>QAbstractSpinBox::PlusMinus</enum>
+     </property>
+     <property name="specialValueText">
+      <string/>
+     </property>
+     <property name="keyboardTracking">
+      <bool>true</bool>
+     </property>
+     <property name="maximum">
+      <number>1000</number>
+     </property>
+     <property name="singleStep">
+      <number>100</number>
+     </property>
+     <property name="value">
+      <number>300</number>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>145</x>
+       <y>20</y>
+       <width>52</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Duration</string>
+     </property>
+    </widget>
+   </widget>
   </widget>
  </widget>
  <resources/>
