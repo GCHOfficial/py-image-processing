@@ -76,6 +76,7 @@ class PyGUI(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def handle_ui_checkboxes(self):
         if self.filenames == []:
+            self.ui.pushButton.setText("Select Source Files")
             self.ui.radioButton.setEnabled(True)
             self.ui.radioButton_2.setEnabled(True)
             self.ui.radioButton_3.setEnabled(True)
@@ -84,6 +85,10 @@ class PyGUI(QtWidgets.QMainWindow, Ui_MainWindow):
             self.ui.radioButton.setEnabled(False)
             self.ui.radioButton_2.setEnabled(False)
             self.ui.radioButton_3.setEnabled(False)
+    
+    def handle_finish(self):
+        self.filenames.clear()
+        self.handle_ui_checkboxes()
 
     def os_check_for_path(self):
         if sys.platform == "win32":
@@ -116,6 +121,8 @@ class PyGUI(QtWidgets.QMainWindow, Ui_MainWindow):
                     )
                     image.save(imagepath)
                 self.ui.statusbar.showMessage("Image conversion finished!")
+                self.success_message_box()
+                self.handle_finish()
             if self.ui.radioButton_2.isChecked():
                 dlg.setNameFilters(["Images (*.png)"])
                 dlg.selectNameFilter("Images (*.png)")
@@ -131,6 +138,7 @@ class PyGUI(QtWidgets.QMainWindow, Ui_MainWindow):
                     image.save(imagepath)
                 self.ui.statusbar.showMessage("Image conversion finished!")
                 self.success_message_box()
+                self.handle_finish()
             elif self.ui.radioButton_3.isChecked():
                 dlg.setNameFilters(["Images (*.gif)"])
                 dlg.selectNameFilter("Images (*.gif)")
@@ -143,7 +151,6 @@ class PyGUI(QtWidgets.QMainWindow, Ui_MainWindow):
                     images.append(Image.open(file))
                     if imgsize == ():
                         imgsize = images[counter].size
-                        print(imgsize)
                     else:
                         images[counter] = images[counter].resize(imgsize)
                     counter += 1
@@ -159,6 +166,7 @@ class PyGUI(QtWidgets.QMainWindow, Ui_MainWindow):
                 )
                 self.ui.statusbar.showMessage("Image conversion finished!")
                 self.success_message_box()
+                self.handle_finish()
         except UnidentifiedImageError as err:
             message = str(err).split("'")[1]
             msg = QtWidgets.QMessageBox()
